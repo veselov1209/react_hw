@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
-import Stopwatch from './Components/Stopwatch';
-import Timer from './Components/Timer';
-import styles from './index.css'
+import React from 'react';
+import ManagedContest from './Components/ManagedContest';
 
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className='timerWrapper'>
-        <Timer />
-        <Stopwatch />
-      </div>
-      
-    )
-  }
+
+export default function App() {
+  return (
+    <ManagedContest />
+  )
 }
