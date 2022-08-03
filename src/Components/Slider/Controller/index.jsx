@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types'
 import styles from './Controller.module.scss';
 
 export default function Controller(props) {
@@ -8,6 +8,8 @@ export default function Controller(props) {
     const [isRunning, setIsRunning] = useState(false);
     const [slideShowId, setSlideShowId] = useState(null);
     const [delay, setDelay] = useState(1000);
+
+    
 
     const start = () => {
         if(!isRunning) {
@@ -27,8 +29,8 @@ export default function Controller(props) {
     }
 
     return (
-        <div className='styles.container'>
-            <div className='styles.container__navigation'>
+        <div className={styles.container}>
+            <div className={styles.container__navigation}>
                 <button onClick={setPrevSlide}>{'<'}</button>
                 <button onClick={setNextSlide}>{'>'}</button>
             </div>
@@ -44,7 +46,10 @@ export default function Controller(props) {
   )
 }
 
-Controller.PropTypes = {
-   setPrevSlide: PropTypes.func.isRequred,
-   setNextSlide: PropTypes.func.isRequred
-}
+Controller.propTypes = {
+    setPrevSlide: PropTypes.func.isRequired,
+    setNextSlide: PropTypes.func.isRequired
+  }
+
+
+
